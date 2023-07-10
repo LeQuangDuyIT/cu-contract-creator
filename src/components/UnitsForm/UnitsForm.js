@@ -29,6 +29,8 @@ const UnitsForm = () => {
                         <UnitListItem />
                         <UnitListItem />
                         <UnitListItem />
+                        <UnitListItem />
+                        <UnitListItem />
                     </table>
                 </div>
             </div>
