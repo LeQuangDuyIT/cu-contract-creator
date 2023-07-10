@@ -1,0 +1,22 @@
+.unit-list-item .address-col .address-input {
+    display: flex;
+    gap: 8px;
+
+    width: 100%;
+}
+.unit-list-item .address-col .address-input input {
+    width: 90%;
+    padding: 4px;
+
+    font-size: 14px;
+}
+.unit-list-item .address-col .address-input:first-child input {
+    margin-bottom: 4px;
+}
+.unit-list-item .address-col .address-input:last-child input {
+    border: none;
+    outline: none;
+}
+.edit-addressEn-btn {
+    margin-top: auto;
+}

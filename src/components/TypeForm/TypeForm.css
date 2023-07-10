@@ -1,0 +1,12 @@
+.type-form .form-core {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    height: fit-content;
+}
+.type-form .form-core .form-item {
+    width: calc((100% - 32px) / 2);
+    margin-bottom: 0;
+}

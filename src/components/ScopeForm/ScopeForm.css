@@ -1,0 +1,12 @@
+.unit-space {
+    margin-bottom: 24px;
+}
+
+.unit-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    cursor: pointer;
+    width: fit-content;
+}
