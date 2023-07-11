@@ -18,7 +18,7 @@
     color: #679cf9;
     border: 1px solid #679cf9;
 }
-.units-table__wrap{
+.units-table__wrap {
     border: 1px solid #d8d8d8;
     border-radius: 4px;
 }
@@ -34,7 +34,7 @@
 .units-table td {
     padding: 8px;
 }
-.thead__wrap{
+.thead__wrap {
     border-radius: 4px 4px 0 0;
     border: 1px solid #fdedcc;
 }
@@ -43,7 +43,7 @@
 
     background: #fdedcc;
 }
-.tbody__wrap{
+.tbody__wrap {
     border-radius: 0 0 4px 4px;
     border: 1px solid #d8d8d8;
     border-top: none;
