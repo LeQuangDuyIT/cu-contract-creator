@@ -134,7 +134,9 @@ const FeeForm = () => {
                                     </p>
                                 </div>
                                 <div className="bill-row">
-                                    <p className="row__title">8% VAT amount</p>
+                                    <p className="row__title">
+                                        VAT amount ({feeInfo.taxRate * 100}%)
+                                    </p>
                                     <p className="row__number">
                                         {(subTotal * feeInfo.taxRate).toLocaleString('en-US')}
                                     </p>
