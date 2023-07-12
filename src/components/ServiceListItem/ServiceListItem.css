@@ -1,0 +1,11 @@
+.service-name-col .service-name__vi{
+    margin-bottom: 4px;
+}
+.service-name__en{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-name__en input{
+    font-style: italic;
+}

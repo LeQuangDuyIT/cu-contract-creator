@@ -2,21 +2,8 @@ import React, { useState } from 'react';
 import './UnitListItem.css';
 
 const UnitListItem = props => {
-    const { unitId, unitType, unitName, unitAddressVi, unitAddressEn, handleChangeUnitAddress } =
-        props;
-    const [addressVi, setAddressVi] = useState(unitAddressVi);
-    const [addressEn, setAddressEn] = useState(unitAddressEn);
+    const { unitId, unitType, unitName, unitAddressVi, unitAddressEn, handleChangeUnit } = props;
     const [editAddressEn, setEditAddressEn] = useState(false);
-
-    const onChangeAddress = (e, lang) => {
-        const addressValue = e.target.value;
-        if (lang === 'vi') {
-            setAddressVi(addressValue);
-        } else if (lang === 'en') {
-            setAddressEn(addressValue);
-        }
-        handleChangeUnitAddress(unitId, unitType, addressValue, lang);
-    };
 
     const onEditAddressEn = e => {
         e.preventDefault();
@@ -28,15 +15,23 @@ const UnitListItem = props => {
             <td className="name-col">{unitName}</td>
             <td className="address-col">
                 <div className="address-input">
-                    <input type="text" value={addressVi} onChange={e => onChangeAddress(e, 'vi')} />
+                    <input
+                        type="text"
+                        value={unitAddressVi}
+                        onChange={e =>
+                            handleChangeUnit(unitId, unitType, 'unitAddressVi', e.target.value)
+                        }
+                    />
                 </div>
                 <div className="address-input">
                     <input
                         className={!editAddressEn ? 'read-only' : ''}
                         type="text"
                         placeholder="Address in English version"
-                        value={addressEn}
-                        onChange={e => onChangeAddress(e, 'en')}
+                        value={unitAddressEn}
+                        onChange={e =>
+                            handleChangeUnit(unitId, unitType, 'unitAddressEn', e.target.value)
+                        }
                         onBlur={() => setEditAddressEn(false)}
                         readOnly={!editAddressEn}
                     />

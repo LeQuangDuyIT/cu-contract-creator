@@ -127,7 +127,7 @@ const ClinetForm = () => {
                 </div>
                 <div className="form-row">
                     <div className="form-item">
-                        <label htmlFor="pronouns">Mr./Mrs.</label>
+                        <label htmlFor="pronouns">Pronouns</label>
                         <select
                             id="pronouns"
                             name="pronouns"
@@ -136,6 +136,7 @@ const ClinetForm = () => {
                         >
                             <option value="Mr.">Mr.</option>
                             <option value="Mrs.">Mrs.</option>
+                            <option value="Ms.">Ms.</option>
                         </select>
                     </div>
                     <div className="form-item">

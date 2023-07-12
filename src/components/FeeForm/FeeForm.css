@@ -1,0 +1,89 @@
+.fee-info-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 32px;
+}
+.select-space {
+    display: flex;
+    gap: 24px;
+}
+.select__wrap {
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #679cf9;
+
+    background: #679cf9;
+
+    font-size: 14px;
+}
+.select__wrap label {
+    padding: 0 8px;
+
+    color: white;
+}
+.select__wrap select {
+    height: 100%;
+    padding: 4px;
+
+    border-radius: 0 4px 4px 0;
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+.services-list-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    width: 100%;
+    margin-top: 32px;
+}
+.services-list-table .tbody__wrap {
+    border-radius: 0;
+}
+.services-list-table .tfoot__wrap {
+    padding: 16px 32px;
+
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+.bill-space {
+    width: fit-content;
+    margin-left: auto;
+
+    text-align: right;
+}
+.bill-space .bill-row {
+    display: flex;
+}
+.bill-space .bill-row:not(:last-child) {
+    margin-bottom: 8px;
+}
+.bill-row .row__title {
+    width: 160px;
+}
+.bill-row .row__number {
+    width: 150px;
+}
+.service-name-col {
+    width: 70%;
+}
+.service-cost-col {
+    width: 30px;
+}
+.service-name-col, .service-cost-col{
+    vertical-align: bottom;
+}
+.service-name-col input,
+.service-cost-col input {
+    width: 100%;
+    /* padding: 4px; */
+
+    font-size: 14px;
+}
+.service-name-col input{
+    width: 90%;
+}

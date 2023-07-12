@@ -2,23 +2,7 @@ import React, { useState } from 'react';
 import './UnitInputItem.css';
 
 const UnitInputItem = props => {
-    const {
-        unitsList,
-        unitId,
-        unitName,
-        unitType,
-        unitAddressVi,
-        unitAddressEn,
-        handleChangeUnitName,
-        handleRemoveUnit
-    } = props;
-    const [unitNameValue, setUnitNameValue] = useState(unitName);
-
-    const onInputValue = e => {
-        const inputValue = e.target.value;
-        setUnitNameValue(inputValue);
-        handleChangeUnitName(unitId, unitType, inputValue);
-    };
+    const { unitsList, unitId, unitName, unitType, handleChangeUnit, handleRemoveUnit } = props;
 
     const onRemoveUnit = e => {
         e.preventDefault();
@@ -27,7 +11,11 @@ const UnitInputItem = props => {
 
     return (
         <div className="unit-input-item">
-            <input type="text" value={unitNameValue} onChange={onInputValue} />
+            <input
+                type="text"
+                value={unitName}
+                onChange={e => handleChangeUnit(unitId, unitType, 'unitName', e.target.value)}
+            />
             {unitsList.length > 1 && (
                 <>
                     <button onClick={onRemoveUnit}>

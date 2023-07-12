@@ -28,19 +28,20 @@ const ScopeForm = () => {
         }
     ]);
 
-    const handleChangeUnitName = (unitId, unitType, newUnitName) => {
+    const handleChangeUnit = (unitId, unitType, unitKey, newUnitName) => {
         if (unitType === 'production') {
             const newProductionList = productionList.map(unit =>
-                unit.unitId === unitId ? { ...unit, unitName: newUnitName } : unit
+                unit.unitId === unitId ? { ...unit, [unitKey]: newUnitName } : unit
             );
             setProductionList(newProductionList);
         } else if (unitType === 'processing') {
             const newProcessingList = processingList.map(unit =>
-                unit.unitId === unitId ? { ...unit, unitName: newUnitName } : unit
+                unit.unitId === unitId ? { ...unit, [unitKey]: newUnitName } : unit
             );
             setProcessingList(newProcessingList);
         }
     };
+    console.log(productionList);
 
     const handleAddUnit = unitType => {
         const newUnit = {
@@ -52,22 +53,6 @@ const ScopeForm = () => {
             setProductionList([...productionList, newUnit]);
         } else if (unitType === 'processing') {
             setProcessingList([...processingList, newUnit]);
-        }
-    };
-
-    const handleChangeUnitAddress = (unitId, unitType, newUnitAddress, addressLang) => {
-        const addressKeyByLanguage =
-            (addressLang === 'vi' && 'unitAddressVi') || (addressLang === 'en' && 'unitAddressEn');
-        if (unitType === 'production') {
-            const newProductionList = productionList.map(unit =>
-                unit.unitId === unitId ? { ...unit, [addressKeyByLanguage]: newUnitAddress } : unit
-            );
-            setProductionList(newProductionList);
-        } else if (unitType === 'processing') {
-            const newProcessingList = processingList.map(unit =>
-                unit.unitId === unitId ? { ...unit, [addressKeyByLanguage]: newUnitAddress } : unit
-            );
-            setProcessingList(newProcessingList);
         }
     };
 
@@ -92,9 +77,8 @@ const ScopeForm = () => {
                     {onProduction && (
                         <UnitsForm
                             productionList={productionList}
-                            handleChangeUnitName={handleChangeUnitName}
+                            handleChangeUnit={handleChangeUnit}
                             handleAddUnit={handleAddUnit}
-                            handleChangeUnitAddress={handleChangeUnitAddress}
                             handleRemoveUnit={handleRemoveUnit}
                         />
                     )}
@@ -107,9 +91,8 @@ const ScopeForm = () => {
                     {onProcessing && (
                         <UnitsForm
                             processingList={processingList}
-                            handleChangeUnitName={handleChangeUnitName}
+                            handleChangeUnit={handleChangeUnit}
                             handleAddUnit={handleAddUnit}
-                            handleChangeUnitAddress={handleChangeUnitAddress}
                             handleRemoveUnit={handleRemoveUnit}
                         />
                     )}

@@ -4,18 +4,11 @@ import './UnitsForm.css';
 import UnitListItem from '../UnitListItem/UnitListItem';
 
 const UnitsForm = props => {
-    const {
-        productionList,
-        processingList,
-        handleChangeUnitName,
-        handleAddUnit,
-        handleChangeUnitAddress,
-        handleRemoveUnit
-    } = props;
+    const { productionList, processingList, handleChangeUnit, handleAddUnit, handleRemoveUnit } =
+        props;
     const unitsList = productionList || processingList;
     const unitType = (productionList && 'production') || (processingList && 'processing');
-    const shouldShowUnitsList =
-        unitsList.every(unit => unit.unitName !== '') || unitsList.length > 1;
+    const shouldShowUnitsList = unitsList[0].unitName !== '' || unitsList.length > 1;
 
     const onClickAddUnit = e => {
         e.preventDefault();
@@ -28,13 +21,13 @@ const UnitsForm = props => {
     return (
         <div className="units-form">
             <div className="units-section">
-                <h3 className="section-title">Units name</h3>
+                <h3 className="section-title">Unit name</h3>
                 {unitsList.map(unit => (
                     <UnitInputItem
                         key={unit.unitId}
                         {...unit}
                         unitsList={unitsList}
-                        handleChangeUnitName={handleChangeUnitName}
+                        handleChangeUnit={handleChangeUnit}
                         handleRemoveUnit={handleRemoveUnit}
                     />
                 ))}
@@ -63,7 +56,7 @@ const UnitsForm = props => {
                                     <UnitListItem
                                         key={unit.unitId}
                                         {...unit}
-                                        handleChangeUnitAddress={handleChangeUnitAddress}
+                                        handleChangeUnit={handleChangeUnit}
                                     />
                                 ))}
                             </tbody>

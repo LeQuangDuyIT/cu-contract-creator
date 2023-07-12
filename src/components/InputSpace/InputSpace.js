@@ -5,9 +5,10 @@ import ClinetForm from '../ClientForm/ClinetForm';
 import './InputSpace.css';
 import { datasParts } from '../../utils/constants';
 import ScopeForm from '../ScopeForm/ScopeForm';
+import FeeForm from '../FeeForm/FeeForm';
 
 const InputSpace = props => {
-    const { typePart, clientPart, scopePart } = datasParts;
+    const { typePart, clientPart, scopePart, feePart } = datasParts;
     const [focusedPart, setFocusedPart] = useState(typePart.key);
 
     const handleFocused = partKey => {
@@ -22,6 +23,7 @@ const InputSpace = props => {
                 {focusedPart === typePart.key && <TypeForm />}
                 {focusedPart === clientPart.key && <ClinetForm />}
                 {focusedPart === scopePart.key && <ScopeForm />}
+                {focusedPart === feePart.key && <FeeForm />}
             </div>
         </div>
     );
