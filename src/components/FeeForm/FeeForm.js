@@ -8,7 +8,7 @@ const FeeForm = () => {
     const initialService = {
         serviceNameVi: '',
         serviceNameEn: '',
-        serviceFee: ''
+        serviceFee: 0
     };
     const initalFeeInfo = {
         taxRate: 0.1,
