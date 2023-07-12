@@ -14,9 +14,9 @@
     margin-bottom: 4px;
 }
 .unit-list-item .address-col .address-input:last-child input {
-    border: none;
-    outline: none;
+    font-style: italic;
 }
+
 .edit-addressEn-btn {
     margin-top: auto;
 }

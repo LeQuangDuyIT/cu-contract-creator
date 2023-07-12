@@ -1,3 +1,5 @@
+export const getId = () => new Date().getTime();
+
 export const datasParts = {
     typePart: {
         menuName: 'Contract type',
@@ -83,5 +85,6 @@ export const initialClientDatas = {
     phoneNum: '',
     representativeName: '',
     pronouns: 'Mr.',
-    jobTitle: ''
+    jobTitleVi: '',
+    jobTitleEn: ''
 };

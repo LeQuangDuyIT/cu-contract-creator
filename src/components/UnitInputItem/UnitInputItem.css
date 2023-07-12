@@ -1,6 +1,7 @@
 .unit-input-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 4px;
 
     margin-bottom: 4px;
@@ -8,6 +9,8 @@
 .unit-input-item input {
     flex-grow: 1;
 }
+
 .unit-input-item button {
     padding: 2px;
 }
+

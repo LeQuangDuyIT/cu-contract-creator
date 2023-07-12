@@ -31,6 +31,7 @@
     text-align: left;
     font-size: 14px;
 }
+
 .units-table td {
     padding: 8px;
 }
@@ -48,10 +49,12 @@
     border: 1px solid #d8d8d8;
     border-top: none;
 }
+
 .tbody tr:not(:last-child) {
     border-bottom: 1px solid #d8d8d8;
 }
-.units-table th:first-child,
-.units-table td:first-child {
+.name-col {
     width: 32%;
+
+    vertical-align: top;
 }
