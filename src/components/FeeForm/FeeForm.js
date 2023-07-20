@@ -22,8 +22,6 @@ const FeeForm = () => {
 
     const subTotal = servicesList.reduce((sum, service) => sum + service.serviceFee, 0);
 
-    console.log(servicesList);
-
     const handleAddService = e => {
         e.preventDefault();
         const shouldAdd = servicesList.every(service => service.serviceNameVi !== '');
@@ -49,7 +47,6 @@ const FeeForm = () => {
         const { name, value } = e.target;
         setFeeInfo({ ...feeInfo, [name]: value });
     };
-    console.log(feeInfo);
 
     return (
         <form className="input-form">

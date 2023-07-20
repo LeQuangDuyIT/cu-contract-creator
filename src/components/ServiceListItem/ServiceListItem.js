@@ -20,9 +20,10 @@ const ServiceListItem = props => {
                         className={!editServiceNameEn ? 'read-only' : ''}
                         placeholder="Service name in English version"
                         type="text"
+                        name="serviceNameEn"
                         value={serviceNameEn}
                         onChange={e =>
-                            handleChangeService(serviceId, 'serviceNameEn', e.target.value)
+                            handleChangeService(serviceId, e.target.name, e.target.value)
                         }
                         onBlur={() => setEditServiceNameEn(false)}
                         readOnly={!editServiceNameEn}
@@ -35,11 +36,12 @@ const ServiceListItem = props => {
             <td className="service-cost-col">
                 <input
                     type="text"
+                    name="serviceFee"
                     value={serviceFee.toLocaleString('en-US')}
                     onChange={e =>
                         handleChangeService(
                             serviceId,
-                            'serviceFee',
+                            e.target.name,
                             +e.target.value.replace(/,/g, '')
                         )
                     }

@@ -13,8 +13,9 @@ const ServiceForm = props => {
         <div className="unit-input-item">
             <input
                 type="text"
+                name="serviceNameVi"
                 value={serviceNameVi}
-                onChange={e => handleChangeService(serviceId, 'serviceNameVi', e.target.value)}
+                onChange={e => handleChangeService(serviceId, e.target.name, e.target.value)}
             />
             {servicesList.length > 1 && (
                 <>

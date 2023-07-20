@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './UnitInputItem.css';
 
 const UnitInputItem = props => {
@@ -13,8 +13,9 @@ const UnitInputItem = props => {
         <div className="unit-input-item">
             <input
                 type="text"
+                name="unitName"
                 value={unitName}
-                onChange={e => handleChangeUnit(unitId, unitType, 'unitName', e.target.value)}
+                onChange={e => handleChangeUnit(unitId, unitType, e.target.name, e.target.value)}
             />
             {unitsList.length > 1 && (
                 <>

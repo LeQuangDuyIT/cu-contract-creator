@@ -17,9 +17,10 @@ const UnitListItem = props => {
                 <div className="address-input">
                     <input
                         type="text"
+                        name="unitAddressVi"
                         value={unitAddressVi}
                         onChange={e =>
-                            handleChangeUnit(unitId, unitType, 'unitAddressVi', e.target.value)
+                            handleChangeUnit(unitId, unitType, e.target.name, e.target.value)
                         }
                     />
                 </div>
@@ -27,16 +28,17 @@ const UnitListItem = props => {
                     <input
                         className={!editAddressEn ? 'read-only' : ''}
                         type="text"
+                        name="unitAddressEn"
                         placeholder="Address in English version"
                         value={unitAddressEn}
                         onChange={e =>
-                            handleChangeUnit(unitId, unitType, 'unitAddressEn', e.target.value)
+                            handleChangeUnit(unitId, unitType, e.target.name, e.target.value)
                         }
                         onBlur={() => setEditAddressEn(false)}
                         readOnly={!editAddressEn}
                     />
                     <button className="edit-addressEn-btn" onClick={onEditAddressEn}>
-                        <img src="/assets/icon/edit-icon.png" alt="" />
+                        <img src="/assets/icon/edit-icon.png" alt="edit" />
                     </button>
                 </div>
             </td>
